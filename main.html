@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/dashboard.css" type="text/css"/>
+    </head>
+    <body>
+        <div class='openingwrapper'>
+            <div class='opening_title'>Opening Now</div>
+            <div class='opening_name'>{{opening_now.gift_to}}</div>
+        </div>
+        <div class='ondeckwrapper'>
+            <div class='ondeck_title'>On Deck</div>
+            <div class='ondeck_name'>{{opening_now.gift_to}}
+            <form action="/open" method="post">
+                {% for gift in unopened_gifts %}
+                <input type="checkbox" name="on_deck" value="{{gift.key.id}}">{{gift.gift_to}} (from: {{gift.gift_from}})<br/>
+                {% endfor %}
+                <input type="submit" value="Mark as opened"></br>
+            </form>
+            </div>
+        </div>
+
+        <div style="clear: both">
+        <form action="" method="post">
+            From: <input type="text" name="gift_from" value="" id="gift_from"></br>
+            To: <input type="text" name="gift_to" value="" id="gift_to"></br>
+            <input type="submit" value="add to queue"></br>
+        </form>
+        
+        
+        <h3>Opened</h3>
+        {% for gift in opened_gifts %}
+        {{gift.gift_to}} (from: {{gift.gift_from}})<br/>
+        {% endfor %}
+        </div>
+    </body>
+</html>

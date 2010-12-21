@@ -1,0 +1,32 @@
+body {
+    font-family: verdana
+}
+
+.ondeckwrapper {
+    width: 20%;
+    float: left;
+    margin-left: 10px;
+}
+
+.ondeck_title {
+    background-color: #84868B;
+}
+
+.ondeck_name {
+    border: 2px solid #84868B;
+}
+
+.openingwrapper {
+    width: 75%;
+    float: left;
+}
+
+.opening_title {
+    background-color: #F09D68;
+    font-size: 1.5em;
+}
+
+.opening_name {
+    border: 2px solid #F09D68;
+    font-size: 8em;
+}
