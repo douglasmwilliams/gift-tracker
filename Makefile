@@ -1,6 +1,6 @@
 PYTHON          = python
 APPENGINE       = /mnt/src/google_appengine
-APP_ID          = gift-tracker
+APP_ID          = gift-queue
 EMAIL           = fjania@gmail.com
 SERVE_PORT      = 9091
 SERVE_ADDRESS   = 0.0.0.0
