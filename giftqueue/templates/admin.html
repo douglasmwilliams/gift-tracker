@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block admin %}
+<div class='openbutton'>
+    <form action="/open" method="post">
+        <input type="hidden" name="on_deck" value="{{opening_now.key.id}}">
+        <input type="submit" value="Mark {{opening_now.gift_to}}'s gift as opened">
+    </form>
+</div>
+<div class="newgift" style="clear: both">
+    <div class="title">Add a new gift to the Queue</div>
+    <div class="content">
+        <form action="/add" method="post">
+            <span class="to label">To:</span><input type="text" name="gift_to" value="" id="gift_to"></br>
+            <span class="from label">From:</span><input type="text" name="gift_from" value="" id="gift_from"></br>
+            <input type="submit" value="add to queue"></br>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block stats %}
+<div class='stats'>
+    <div class='title'>Statistics</div>
+    <div class='content'>
+        Stats go here
+    </div>            
+</div>            
+{% endblock %}

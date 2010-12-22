@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/dashboard.css" type="text/css"/>
+    </head>
+    <body>
+        <div class='left'>
+            {% block opening %}
+            <div class='opening'>
+                <div class='title'>Opening Now</div>
+                <div class='content'>
+                    <div class='to'>{{opening_now.gift_to}}</div>
+                    <div class='from'>from: {{opening_now.gift_from}}</div>
+                </div>
+            </div>
+            {% endblock %}
+            {% block admin %}{% endblock %}
+        </div>
+        <div class='right'>
+            
+            {% block count %}
+            <div class='count'>
+                <div class='title'>Opened so far</div>
+                <div class='content'>
+                    {{gifts_opened_count}}
+                </div>
+            </div>            
+            {% endblock %}
+            
+            {% block ondeck %}
+            <div class='ondeck'>
+                <div class='title'>On Deck</div>
+                <div class='content'>
+                    {% for gift in queued_gifts %}
+                        &gt; {{gift.gift_to}} <span class="from">from: {{gift.gift_from}}</span><br/>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endblock %}
+            {% block stats %}{% endblock %}
+        </div>
+
+    </body>
+</html>
