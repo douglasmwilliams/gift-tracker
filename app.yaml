@@ -14,11 +14,11 @@ handlers:
   login: admin
 
 - url: /favicon.ico
-  static_files: gift-tracker/static/media/favicon.ico
-  upload: gift-tracker/static/media/favicon.ico
+  static_files: gift-queue/static/media/favicon.ico
+  upload: gift-queue/static/media/favicon.ico
 
 - url: /css
-  static_dir: gift-tracker/static/media/css
+  static_dir: gift-queue/static/media/css
 
 - url: .*
   script: main.py

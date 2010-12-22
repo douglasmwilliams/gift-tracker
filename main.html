@@ -5,32 +5,32 @@
     <body>
         <div class='openingwrapper'>
             <div class='opening_title'>Opening Now</div>
-            <div class='opening_name'>{{opening_now.gift_to}}</div>
+            <div class='opening_name'>{{opening_now.gift_to}}<span class="from"><br/>From: {{opening_now.gift_from}}</span></div>
+            <div class='opening_button'>
+                <form action="/open" method="post">
+                    <input type="hidden" name="on_deck" value="{{opening_now.key.id}}">
+                    <input type="submit" value="Open gift">
+                </form>
+            </div>
         </div>
         <div class='ondeckwrapper'>
             <div class='ondeck_title'>On Deck</div>
-            <div class='ondeck_name'>{{opening_now.gift_to}}
-            <form action="/open" method="post">
-                {% for gift in unopened_gifts %}
-                <input type="checkbox" name="on_deck" value="{{gift.key.id}}">{{gift.gift_to}} (from: {{gift.gift_from}})<br/>
+            <div class='ondeck_name'>
+                <ul>
+                {% for gift in queued_gifts %}
+                    <li>{{gift.gift_to}} (from: {{gift.gift_from}})</li>
                 {% endfor %}
-                <input type="submit" value="Mark as opened"></br>
-            </form>
+                </ul>
             </div>
         </div>
 
-        <div style="clear: both">
+        <div id="new_gift" style="clear: both">
+        Add a new gift to the Queue<br/>
         <form action="" method="post">
-            From: <input type="text" name="gift_from" value="" id="gift_from"></br>
-            To: <input type="text" name="gift_to" value="" id="gift_to"></br>
+            <span class="to">To:</span><input type="text" name="gift_to" value="" id="gift_to"></br>
+            <span class="from">From:</span><input type="text" name="gift_from" value="" id="gift_from"></br>
             <input type="submit" value="add to queue"></br>
         </form>
-        
-        
-        <h3>Opened</h3>
-        {% for gift in opened_gifts %}
-        {{gift.gift_to}} (from: {{gift.gift_from}})<br/>
-        {% endfor %}
         </div>
     </body>
 </html>

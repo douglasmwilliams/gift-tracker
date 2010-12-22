@@ -13,4 +13,9 @@ indexes:
 - kind: Gift
   properties:
   - name: opened_on
+  - name: queue_on
+
+- kind: Gift
+  properties:
+  - name: opened_on
   - name: queued_on

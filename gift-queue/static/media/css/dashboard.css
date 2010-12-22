@@ -10,6 +10,7 @@ body {
 
 .ondeck_title {
     background-color: #84868B;
+    padding: 5px;
 }
 
 .ondeck_name {
@@ -24,9 +25,25 @@ body {
 .opening_title {
     background-color: #F09D68;
     font-size: 1.5em;
+    padding: 5px;
 }
 
 .opening_name {
-    border: 2px solid #F09D68;
+    padding: 9px;
     font-size: 8em;
+    border: 2px solid #F09D68;
+}
+
+.opening_name .from{
+    font-size: 0.125em;
+    color: #AAAAAA;
+}
+
+.opening_button {
+    text-align: right;
+}
+
+#new_gift .to, #new_gift .from{
+    display: inline-block;
+    width: 60px;
 }

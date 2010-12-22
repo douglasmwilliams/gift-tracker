@@ -12,17 +12,22 @@ class Gift(db.Model):
     gift_to = db.StringProperty(required=True)
     queued_on = db.DateTimeProperty( auto_now_add=True)
     opened_on = db.DateTimeProperty()
+
+    def __repr__(self):
+        return "<Gift to: %s from: %s>" % (self.gift_to, self.gift_from)
      
  
 class MyHandler(webapp.RequestHandler):
     def get(self):
-        opening_now = db.GqlQuery('SELECT * FROM Gift WHERE opened_on = NULL ORDER BY queued_on LIMIT 1')
-        unopened_gifts = db.GqlQuery('SELECT * FROM Gift WHERE opened_on = NULL ')
-        opened_gifts = db.GqlQuery('SELECT * FROM Gift WHERE opened_on != NULL ')
+        queued_gifts = db.GqlQuery('SELECT * FROM Gift WHERE opened_on = NULL ORDER BY queued_on')
+        gifts = list(queued_gifts)
+
+        if not gifts:
+            gifts = [""]
+
         values = { 
-            'opening_now' : opening_now[0],
-            'unopened_gifts' : unopened_gifts,
-            'opened_gifts' : opened_gifts
+            'opening_now' : gifts[0],
+            'queued_gifts' : gifts[1:],
         }
         self.response.out.write(template.render('main.html', values))
 
