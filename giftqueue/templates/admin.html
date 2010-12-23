@@ -4,6 +4,7 @@
     <form action="/open" method="post">
         <input type="hidden" name="on_deck" value="{{opening_now.key.id}}">
         <input type="submit" value="Mark {{opening_now.gift_to}}'s gift as opened">
+        <span class="gift name label">Gift:</span><input type="text" name="gift_name" value="" id="gift_name"></br>
     </form>
 </div>
 <div class="newgift" style="clear: both">
