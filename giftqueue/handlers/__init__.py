@@ -45,8 +45,8 @@ class AdminHandler(webapp.RequestHandler):
 class AddToQueueHandler(webapp.RequestHandler):
     def post(self):
         gift = Gift(
-            gift_from=self.request.get('gift_from'),
-            gift_to=self.request.get('gift_to')
+            gift_from=self.request.get('gift_from', default_value="!"),
+            gift_to=self.request.get('gift_to', default_value="!")
         )
         gift.put()
         self.redirect('/admin')
