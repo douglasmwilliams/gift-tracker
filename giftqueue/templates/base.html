@@ -30,9 +30,11 @@
             <div class='ondeck'>
                 <div class='title'>On Deck</div>
                 <div class='content'>
+                    <ul>
                     {% for gift in queued_gifts %}
-                        &gt; {{gift.gift_to}} <span class="from">from: {{gift.gift_from}}</span><br/>
+                        <li>{{gift.gift_to}} <span class="from">from: {{gift.gift_from}}</span></li>
                     {% endfor %}
+                    </ul>
                 </div>
             </div>
             {% endblock %}

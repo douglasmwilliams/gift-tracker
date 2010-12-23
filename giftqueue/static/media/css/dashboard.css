@@ -24,15 +24,23 @@ div {
 }
 
 .title {
-    background-color: #F09D68;
+    background-color: #B37541;
     font-weight: bold;
     padding: 5px;
 }
 
 .content {
     margin-bottom: 10px;
-    border: 2px solid #F09D68;
+    border: 2px solid #B37541;
     padding: 5px;
+}
+
+.opening .title{
+    background-color: #B37541;
+}
+
+.opening .content{
+    border: 2px solid #B37541;
 }
 
 .opening .to {
@@ -43,15 +51,19 @@ div {
     margin-bottom: 0px;
 }
 
+.count .title {
+    background-color: #DECBA1;
+}
+
 .count .content {
     padding: 9px;
     font-size: 6em;
-    border: 2px solid #F09D68;
+    border: 2px solid #DECBA1;
 }
 
 .openbutton {
     text-align: right;
-    background-color: #F09D68;
+    background-color: #B37541;
 }
 
 .label{
@@ -59,68 +71,31 @@ div {
     width: 60px;
 }
 
+.ondeck .title {
+    background-color: #DECBA1;
+}
+
+.ondeck .content {
+    border: 2px solid #DECBA1;
+}
+
 .ondeck .from {
     font-size: 0.75em;
 }
 
-/*
-.ondeck_title {
-    background-color: #84868B;
-    padding: 5px;
+ul {
+    list-style: none;
+    text-indent: -1.5em;
 }
 
-.ondeck_name {
-    border: 2px solid #84868B;
+li::before {
+    content: '» ';
 }
 
-.opening_title {
-    background-color: #F09D68;
-    font-size: 1.5em;
-    padding: 5px;
+.stats .title {
+    background-color: #DECBA1;
 }
 
-.opening_button {
-    background-color: #F09D68;
+.stats .content {
+    border: 2px solid #DECBA1;
 }
-
-.opening_name {
-    padding: 9px;
-    font-size: 8em;
-    border: 2px solid #F09D68;
-}
-
-.opening_name .from{
-    font-size: 0.125em;
-    color: #AAAAAA;
-}
-
-.opening_button {
-    text-align: right;
-}
-
-.new_gift .to, .new_gift .from{
-    display: inline-block;
-    width: 60px;
-}
-
-.new_gift_title {
-    background-color: #84868B;
-    padding: 5px;
-}
-
-.new_gift_form {
-    border: 2px solid #84868B;
-}
-
-.count_title {
-    background-color: #84868B;
-    padding: 5px;
-}
-
-.count_content {
-    border: 2px solid #84868B;
-    margin-bottom: 10px;
-    padding: 9px;
-    font-size: 5em;
-}
-*/
