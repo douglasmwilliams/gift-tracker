@@ -54,6 +54,10 @@ class AddToQueueHandler(webapp.RequestHandler):
 class GiftOpenHandler(webapp.RequestHandler):
     def post(self):
         for gift_id in self.request.get_all('on_deck'):
+
+# need to add a check for null set here
+# if gift=""  ---not sure of the syntax in python yet
+
             gift = Gift.get_by_id(int(gift_id))
             gift.opened_on = datetime.now() 
             gift.put()
